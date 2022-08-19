@@ -1,0 +1,30 @@
+import java.util.*;
+
+class Solution {
+    public boolean solve(int n) {
+
+        if(n==0)
+        return true;
+
+        long l=1;
+        long h=n;
+        while(l<=h)
+        {
+            long mid=(l+h)/2;
+            if(mid*mid==n)
+            return true;
+            else if(mid*mid<n)
+            {
+                l=mid+1;
+            }
+            else
+            {
+                h=mid-1;
+            }
+
+        }
+
+        return false;
+        
+    }
+}
