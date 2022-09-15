@@ -1,0 +1,35 @@
+//Given an integer x, find the square root of x. If x is not a perfect square, then return floor(√x).
+
+
+
+class Solution
+{
+     long floorSqrt(long x)
+	 {
+	     long l=0;
+	     long h=x;
+	     
+	     long ans=-1;
+	     while(l<=h)
+	     {
+	         long mid=l+(h-l)/2;
+	         if(mid*mid==x)
+	         {
+	             ans= mid;
+	             break;
+	         }
+	         else if(mid*mid<x)
+	         {
+	             ans=mid;
+	             l=mid+1;
+	         }
+	         else
+	         {
+	             h=mid-1;
+	         }
+	     }
+	     
+	     return ans;
+	     
+	 }
+}
